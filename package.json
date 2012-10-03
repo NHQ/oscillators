@@ -1,0 +1,23 @@
+{
+  "name": "oscillators",
+  "version": "0.2.0",
+  "description": "the finest javascript oscillators",
+  "main": "oscillators.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:NHQ/oscillators.git"
+  },
+  "keywords": [
+    "DSP",
+    "oscillator",
+    "sine",
+    "square",
+    "saw",
+    "triangle"
+  ],
+  "author": "Johnny Honestly <mostmodernist@gmail.com> (http://johnnyscript.us/)",
+  "license": "MIT"
+}
