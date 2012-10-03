@@ -17,7 +17,7 @@ module.exports = function (freq){
 
 	var f = freq || f;
 
-	return Math.sin(t * f * Math.PI);
+	return Math.sin(2 * t * f * Math.PI);
 	
     };
 
