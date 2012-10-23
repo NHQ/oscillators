@@ -13,17 +13,13 @@ module.exports = function (freq){
 
     return OZ
 
-    function sine(t, freq){
-
-	var f = freq || f;
+    function sine(t, f){
 
 	return Math.sin(2 * t * f * Math.PI);
 	
     };
 
-    function saw(t, freq){
-
-	var f = freq || f;
+    function saw(t, f){
 
 	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 
@@ -31,9 +27,7 @@ module.exports = function (freq){
 
     };
 
-    function saw_i(t, freq){
-
-	f = freq || f;
+    function saw_i(t, f ){
 
 	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 
@@ -41,20 +35,16 @@ module.exports = function (freq){
 
     };
 
-    function triangle(t, freq){
+    function triangle(t, f   ){
 	
-	f = freq || f;
-
 	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 	
 	return n < 0.5 ? -1 + (2 * (2 * n)) : 1 - (2 * (2 * n))
 	
     };
 
-    function triangle_s(t, freq){
+    function triangle_s(t, f   ){
 	
-	f = freq || f;
-
 	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 	
 	s = Math.abs(Math.sin(t));
@@ -64,8 +54,6 @@ module.exports = function (freq){
     };
 
      function square(t, freq){
-
-	f = freq || f;
 
 	return ((t % (1/f)) * f) % 1 > 0.5 ? 1 : -1;
 
