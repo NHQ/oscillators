@@ -1,6 +1,6 @@
 {
   "name": "oscillators",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "description": "the finest javascript oscillators",
   "main": "oscillators.js",
   "scripts": {

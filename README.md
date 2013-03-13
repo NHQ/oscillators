@@ -31,7 +31,7 @@ creates probably something silly
 var  oz = require('oscillators')
 ,    frequency = 100000
 function sineWave(time){ // given a time domain
-  oz.sine(t, frequency)  // returns sinewave at given frequency 
+  oz.sine(time, frequency)  // returns sinewave at given frequency 
 }
 
 ```
@@ -41,7 +41,7 @@ talk to aliens
 var  oz = require('oscillators');
 
 function sineWave(time){ // given a time domain
-  oz.sine(t * os.sine(t, osc.sine(t, 10)), 440 * osc.square(t, 44 * osc.saw(t, 4)))  // no idea
+  oz.sine(time * os.sine(time, osc.sine(time, 10)), 440 * osc.square(time, 44 * osc.saw(time, 4)))  // no idea
 }
 
 ```
