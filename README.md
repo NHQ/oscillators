@@ -1,33 +1,50 @@
-    npm install oscillators
+# Oscillators
+
+Oscillators // pass the time // and oh how often
+
+Useful for DSP, and with Audio Javascript modules such as
+* [baudio](https://github.com/substack/baudio)
+* [webaudio](https://github.com/NHQ/webaudio)
+
+```
+npm install oscillators
+```
+
+# usage
+
+## osc.sine
+creates sine waves
+## osc.saw
+creates saw waves
+## osc.square
+creates square waves
+## osc.triangle
+creates triangle waves
+## osc.saw_i
+creates inverted saw waves
+## osc.triangle_s
+creates probably something silly
+
+# example
+
+```js
+var  oz = require('oscillators')
+,    frequency = 100000
+function sineWave(time){ // given a time domain
+  oz.sine(t, frequency)  // returns sinewave at given frequency 
+}
+
+```
+talk to aliens
+
+```js
+var  oz = require('oscillators');
+
+function sineWave(time){ // given a time domain
+  oz.sine(t * os.sine(t, osc.sine(t, 10)), 440 * osc.square(t, 44 * osc.saw(t, 4)))  // no idea
+}
+
+```
 
 
-    Oscillator = require('oscillators');
-    
-    oscillator = new Oscillator(frequency);
 
-    oscillator.sine(phase/time, newFrequency); // 2ns arg optional to change the frequency
-    oscillator.saw(t,f)
-    o = oscillator(t,f)
-    o.saw_i(t,f)
-    o.triangle(t,f)
-    o.triamgle_s(t,f)
-    o.square(t,f)
-
-
-These are the best time-based oscillators in javascript anywhere on or off the internet. Accept no other brand.
-
-One new Oscillator() can act as many simultenesouly.
-
-    o = new Oscillator(220);
-    p = new Oscillator(330);
-    
-    val = o.saw(t) // or
-
-    return p.triangle(t) * (o.sine(t, 440) * .5)
-    
-              // you don't have to pass frequency again
-    	     // but you can if you want to change frequency
-    	     ////////////////////
-    o.square(t, 220 * o.saw(t,880))
-
-**NOTW** Passing a new frequency does change the oscialltor's value permanently until it is changed again. In other words, you only have to change it once to change it permanently.

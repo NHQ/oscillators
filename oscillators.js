@@ -1,8 +1,7 @@
-module.exports = function (freq){
+module.exports = function (){
 
-    var f = freq;
-
-    var OZ = {};
+    var OZ = {}
+    , tau = Math.PI * 2
 
     OZ.sine = sine;
     OZ.saw = saw;
@@ -15,47 +14,47 @@ module.exports = function (freq){
 
     function sine(t, f){
 
-	return Math.sin(2 * t * f * Math.PI);
+			return Math.sin(t * tau * f);
 	
     };
 
     function saw(t, f){
 
-	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
+			var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 
-	return -1 + (2 * n)
-
-    };
-
-    function saw_i(t, f ){
-
-	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
-
-	return 1 - (2 * n)
+			return -1 + (2 * n)
 
     };
 
-    function triangle(t, f   ){
+    function saw_i(t, f){
+
+			var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 	
-	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
+			return 1 - (2 * n)
+
+    };
+
+    function triangle(t, f){
 	
-	return n < 0.5 ? -1 + (2 * (2 * n)) : 1 - (2 * (2 * n))
+			var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
+	
+			return n < 0.5 ? -1 + (2 * (2 * n)) : 1 - (2 * (2 * n))
 	
     };
 
-    function triangle_s(t, f   ){
+    function triangle_s(t, f){
 	
-	var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
+			var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
 	
-	s = Math.abs(Math.sin(t));
+			var s = Math.abs(Math.sin(t));
 	
-	return n < s ? -1 + (2 * (2 * (n / s))) : 1 - (2 * (2 * (n / s)))
+			return n < s ? -1 + (2 * (2 * (n / s))) : 1 - (2 * (2 * (n / s)))
 	
     };
 
-     function square(t, freq){
+     function square(t, f){
 
-	return ((t % (1/f)) * f) % 1 > 0.5 ? 1 : -1;
+			return ((t % (1/f)) * f) % 1 > 0.5 ? 1 : -1;
 
     };
 
