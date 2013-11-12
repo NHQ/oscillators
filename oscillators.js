@@ -8,48 +8,48 @@ OZ.triangle = triangle;
 OZ.triangle_s = triangle_s;
 OZ.square = square;
 
-function sine(t, f){
+function sine(t, f) {
 
     return Math.sin(t * tau * f);
-    
+
 };
 
-function saw(t, f){
+function saw(t, f) {
 
-    var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
+    var n = ((t % (1 / f)) * f) % 1; // n = [0 -> 1]
 
     return -1 + (2 * n)
 
 };
 
-function saw_i(t, f){
+function saw_i(t, f) {
 
-    var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
-    
+    var n = ((t % (1 / f)) * f) % 1; // n = [0 -> 1]
+
     return 1 - (2 * n)
 
 };
 
-function triangle(t, f){
-    
-    var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
-    
+function triangle(t, f) {
+
+    var n = ((t % (1 / f)) * f) % 1; // n = [0 -> 1]
+
     return n < 0.5 ? -1 + (2 * (2 * n)) : 1 - (2 * (2 * n))
-    
+
 };
 
-function triangle_s(t, f){
-    
-    var n = ((t % (1/f)) * f) % 1; // n = [0 -> 1]
-    
+function triangle_s(t, f) {
+
+    var n = ((t % (1 / f)) * f) % 1; // n = [0 -> 1]
+
     var s = Math.abs(Math.sin(t));
-    
+
     return n < s ? -1 + (2 * (2 * (n / s))) : 1 - (2 * (2 * (n / s)))
-    
+
 };
 
-function square(t, f){
+function square(t, f) {
 
-    return ((t % (1/f)) * f) % 1 > 0.5 ? 1 : -1;
+    return ((t % (1 / f)) * f) % 1 > 0.5 ? 1 : -1;
 
 };
